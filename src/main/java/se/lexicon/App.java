@@ -1,16 +1,55 @@
 package se.lexicon;
 
-/**
- * Hello world!
- *
- */
+import java.util.Arrays;
+
 public class App 
 {
     public static void main( String[] args )
     {
 //        arrays();
 //        iterating();
-        printingArrays();
+//        printingArrays();
+//        sortingArraysExample();
+//        searchANumber();
+
+
+        int[] numbers = {1500,200,500,900,480,29593,25523,634634,2342342};
+
+        int[] lessNumbers = Arrays.copyOf(numbers, 5);
+
+        int[] moreNumbers = Arrays.copyOf(numbers, numbers.length + 3);
+
+        moreNumbers[moreNumbers.length -1] = 65824;
+
+        System.out.println(Arrays.toString(numbers));
+        System.out.println(Arrays.toString(lessNumbers));
+        System.out.println(Arrays.toString(moreNumbers));
+
+
+
+
+
+
+    }
+
+    private static void searchANumber() {
+        int[] numbers = {1500,200,500,900,480,29593,25523,634634,2342342};
+
+        Arrays.sort(numbers);
+
+        int indexOf = Arrays.binarySearch(numbers, 1500);
+
+        System.out.println("indexOf = " + indexOf);
+    }
+
+    private static void sortingArraysExample() {
+        String[] sentence = {"Hello", "This", "Is", "a", "sentence"};
+        System.out.println(Arrays.toString(sentence));
+
+        Arrays.sort(sentence);
+//        Arrays.sort(sentence, String.CASE_INSENSITIVE_ORDER);
+
+        System.out.println(Arrays.toString(sentence));
     }
 
 
@@ -25,6 +64,7 @@ public class App
         // '\u0000'
         System.out.println("" + chars[0] + chars[1] + chars[2] + chars[3] + chars[4]);
 
+        //https://unicode-table.com/en/
         chars[0] = '#';
         chars[1] = '\u0047';
         chars[2] = '\u0034';
@@ -38,7 +78,7 @@ public class App
         String[] sentence = {"Hello", "This", "Is", "a", "sentence"};
 
 //        char[] javaWord1 = char[]; // Compile time error.
-//        System.out.println(sentence[5]); // Runtime Error.
+        System.out.println(sentence[5]); // Runtime Error.
 //        System.out.println(sentence[4]);
 
         System.out.println("sentence.length = " + sentence.length);
